@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="时空之轮 - 时空旅行、平行宇宙与量子物理的深度探索指南。提供科幻小说、电影解析、时间悖论原理及时空旅行技术模拟体验。">
+    <meta name="keywords" content="时空之轮, 时空旅行, 平行宇宙, 量子物理, 科幻小说, 时间悖论, 时空穿越">
+    <title>时空之轮-科幻时空与物理奥秘探索平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #6366f1;
+            --secondary-color: #8b5cf6;
+            --accent-color: #06b6d4;
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--accent-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        .btn-cta {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .btn-cta:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: radial-gradient(circle at center, #1e293b 0%, #0f172a 70%);
+            position: relative;
+            overflow: hidden;
+            padding-top: 60px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoNiwgNiwgNiwgMC4xKSIvPjwvc3ZnPg==');
+            animation: rotate 60s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 1rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            text-shadow: 0 0 30px rgba(99, 102, 241, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--border-color);
+            color: var(--text-main);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Concepts Section */
+        .concepts {
+            padding: 6rem 0;
+        }
+
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .concept-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .concept-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .icon-box {
+            width: 50px;
+            height: 50px;
+            background: rgba(99, 102, 241, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .concept-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .concept-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Timeline Section */
+        .timeline {
+            padding: 6rem 0;
+            background: #131c31;
+        }
+
+        .timeline-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background: var(--border-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            right: -8px;
+            background-color: var(--bg-dark);
+            border: 4px solid var(--accent-color);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid white;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent var(--bg-card);
+        }
+
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid white;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent var(--bg-card) transparent transparent;
+        }
+
+        .right::after {
+            left: -8px;
+        }
+
+        .content {
+            padding: 20px 30px;
+            background-color: var(--bg-card);
+            position: relative;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .content h3 {
+            margin-bottom: 0.5rem;
+            color: var(--accent-color);
+        }
+
+        .content p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Simulation Section */
+        .simulation {
+            padding: 6rem 0;
+        }
+
+        .sim-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .sim-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .sim-content p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .sim-visual {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .clock-face {
+            width: 200px;
+            height: 200px;
+            border: 4px solid var(--accent-color);
+            border-radius: 50%;
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .clock-center {
+            width: 12px;
+            height: 12px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+        }
+
+        .hand {
+            position: absolute;
+            bottom: 50%;
+            left: 50%;
+            transform-origin: bottom;
+            background: var(--text-main);
+            border-radius: 4px;
+            transition: transform 0.5s cubic-bezier(0.4, 2.08, 0.55, 0.44);
+        }
+
+        .hour-hand {
+            width: 4px;
+            height: 50px;
+            margin-left: -2px;
+        }
+
+        .min-hand {
+            width: 2px;
+            height: 70px;
+            margin-left: -1px;
+            background: var(--primary-color);
+        }
+
+        .sec-hand {
+            width: 1px;
+            height: 80px;
+            margin-left: -0.5px;
+            background: #ef4444;
+        }
+
+        .controls {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .control-btn {
+            background: var(--bg-dark);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .control-btn:hover {
+            background: var(--border-color);
+        }
+
+        .control-btn.active {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background: #0b1120;
+            padding: 4rem 0 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media screen and (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .nav-container { flex-direction: column; gap: 1rem; }
+            nav ul { gap: 1rem; font-size: 0.85rem; }
+            
+            .timeline-container::after { left: 31px; }
+            .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; }
+            .timeline-item::after { left: 21px; }
+            .left::before, .right::before { left: 60px; border: medium solid white; border-width: 10px 10px 10px 0; border-color: transparent var(--bg-card) transparent transparent; }
+            .left::after, .right::after { left: 21px; }
+            .right { left: 0%; }
+            
+            .sim-wrapper { grid-template-columns: 1fr; }
+            .sim-visual { height: 300px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span>⟳</span> 时空之轮
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#concepts" class="active">时空理论</a></li>
+                    <li><a href="#timeline">历史演变</a></li>
+                    <li><a href="#simulation">时间模拟</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <a href="#simulation" class="btn-cta">开始体验</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>穿梭于过去与未来<br>探索物理学的终极边界</h1>
+                <p>深入解析时空悖论、平行宇宙与量子纠缠，通过互动模拟器体验时间的非线性流动。</p>
+                <div class="hero-buttons">
+                    <a href="#concepts" class="btn btn-primary">探索理论</a>
+                    <a href="#simulation" class="btn btn-outline">启动模拟器</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Concepts Section -->
+        <section id="concepts" class="concepts container">
+            <h2 class="section-title">核心时空概念</h2>
+            <div class="concept-grid">
+                <article class="concept-card">
+                    <div class="icon-box">⏳</div>
+                    <h3>时间旅行悖论</h3>
+                    <p>探讨祖父悖论、闭合类时曲线等经典逻辑困境，分析在时间旅行中因果律可能面临的挑战与解决方案。</p>
+                </article>
+                <article class="concept-card">
+                    <div class="icon-box">🌌</div>
+                    <h3>平行宇宙</h3>
+                    <p>了解多世界诠释理论，理解为何每一次量子选择都可能分裂出新的宇宙分支，以及如何与“本宇宙”互动。</p>
+                </article>
+                <article class="concept-card">
+                    <div class="icon-box">🌌</div>
+                    <h3>虫洞理论</h3>
+                    <p>爱因斯坦-罗森桥揭示了连接时空不同区域的捷径，是连接遥远星系或穿越时间的理论可能性。</p>
+                </article>
+                <article class="concept-card">
+                    <div class="icon-box">⚛️</div>
+                    <h3>相对论时间膨胀</h3>
+                    <p>基于爱因斯坦狭义与广义相对论，解释高速运动和强引力场如何导致时间的流逝速度发生改变。</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section id="timeline" class="timeline">
+            <div class="container">
+                <h2 class="section-title">时空探索简史</h2>
+                <div class="timeline-container">
+                    <div class="timeline-item left">
+                        <div class="content">
+                            <h3>1905 - 狭义相对论</h3>
+                            <p>爱因斯坦提出光速不变原理，确立了时间与空间相互关联的时空观，为时间膨胀奠定基础。</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item right">
+                        <div class="content">
+                            <h3>1915 - 广义相对论</h3>
+                            <p>爱因斯坦完善引力理论，提出时空可以被大质量物体弯曲，为虫洞和引力透镜提供了物理依据。</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item left">
+                        <div class="content">
+                            <h3>1955 - 闭合类时曲线</h3>
+                            <p>约翰·维勒在爱因斯坦场方程的解中发现了允许时间旅行的数学模型，引发了物理学界的广泛争议。</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item right">
+                        <div class="content">
+                            <h3>1970s - 多世界诠释</h3>
+                            <p>休·埃弗雷特提出量子力学的多世界诠释，认为观测者的每一次选择都会创造一个新的平行宇宙。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Simulation Section -->
+        <section id="simulation" class="simulation container">
+            <div class="sim-wrapper">
+                <div class="sim-content">
+                    <h2>时空旅行模拟器</h2>
+                    <p>通过交互式仪表盘，观察引力场强度与时间膨胀率的关系。模拟器展示了在强引力环境下（如黑洞附近），时间相对于外部观察者如何变慢。</p>
+                    <ul style="color: var(--text-muted); margin-bottom: 2rem;">
+                        <li>• <strong>静止状态：</strong> 标准时间流逝速度。</li>
+                        <li>• <strong>接近光速：</strong> 相对论效应显著，时间变慢。</li>
+                        <li>• <strong>强引力场：</strong> 引力时间膨胀效应。</li>
+                    </ul>
+                    <div class="controls">
+                        <button class="control-btn" onclick="setSpeed(1)">静止</button>
+                        <button class="control-btn" onclick="setSpeed(10)">0.1x 速度</button>
+                        <button class="control-btn" onclick="setSpeed(50)">0.5x 速度</button>
+                        <button class="control-btn" onclick="setSpeed(100)">1x 速度</button>
+                    </div>
+                </div>
+                <div class="sim-visual">
+                    <div class="clock-face">
+                        <div class="clock-center"></div>
+                        <div class="hand hour-hand" id="hourHand"></div>
+                        <div class="hand min-hand" id="minHand"></div>
+                        <div class="hand sec-hand" id="secHand"></div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; font-weight: bold; color: var(--accent-color);" id="timerDisplay">00:00:00</div>
+                        <div style="color: var(--text-muted); margin-top: 0.5rem;">观测者时间</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="concepts" style="background: #131c31;">
+            <div class="container">
+                <h2 class="section-title">常见问题解答</h2>
+                <div class="concept-grid">
+                    <article class="concept-card">
+                        <h3>时间旅行真的可能吗？</h3>
+                        <p>从纯理论物理学（如广义相对论）的角度来看，时间旅行在数学上是允许的，但需要极端的物理条件（如负能量密度）或违反因果律，目前尚未被证实可行。</p>
+                    </article>
+                    <article class="concept-card">
+                        <h3>平行宇宙存在吗？</h3>
+                        <p>这是量子力学多世界诠释的核心。虽然目前缺乏直接的观测证据，但它是解释量子叠加态的一种主流理论框架。</p>
+                    </article>
+                    <article class="concept-card">
+                        <h3>为什么我们感觉不到时间在流逝？</h3>
+                        <p>时间是一个相对概念，源于热力学第二定律（熵增）。我们感知到时间流动是因为事物在变化和衰变，而非时间本身在流动。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="logo" style="margin-bottom: 1rem; display: inline-block;">
+                        <span>⟳</span> 时空之轮
+                    </a>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">
+                        致力于传播前沿物理知识，探索人类认知的边界。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>探索</h4>
+                    <ul>
+                        <li><a href="#">相对论基础</a></li>
+                        <li><a href="#">量子力学</a></li>
+                        <li><a href="#">黑洞奥秘</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>资源</h4>
+                    <ul>
+                        <li><a href="#">学术文献</a></li>
+                        <li><a href="#">科幻推荐</a></li>
+                        <li><a href="#">社区讨论</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关于</h4>
+                    <ul>
+                        <li><a href="#">网站地图</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">联系作者</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2023 时空之轮 版权所有. 仅供学习与交流使用.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple Timer Logic for Simulation
+        let speedMultiplier = 1;
+        let seconds = 0;
+        let animationFrameId;
+
+        const hourHand = document.getElementById('hourHand');
+        const minHand = document.getElementById('minHand');
+        const secHand = document.getElementById('secHand');
+        const timerDisplay = document.getElementById('timerDisplay');
+        const buttons = document.querySelectorAll('.control-btn');
+
+        function updateClock() {
+            seconds += speedMultiplier * 0.1; // Increment based on speed
+            
+            // Calculate degrees
+            const secondsDegrees = ((seconds % 60) / 60) * 360;
+            const minutesDegrees = ((seconds % 3600) / 3600) * 360;
+            const hoursDegrees = ((seconds % 43200) / 43200) * 360;
+
+            // Apply rotation
+            secHand.style.transform = `rotate(${secondsDegrees}deg)`;
+            minHand.style.transform = `rotate(${minutesDegrees}deg)`;
+            hourHand.style.transform = `rotate(${hoursDegrees}deg)`;
+
+            // Update text display (simplified)
+            const totalSeconds = Math.floor(seconds);
+            const hrs = Math.floor(totalSeconds / 3600).toString().padStart(2, '0');
+            const mins = Math.floor((totalSeconds % 3600) / 60).toString().padStart(2, '0');
+            const secs = (totalSeconds % 60).toString().padStart(2, '0');
+            timerDisplay.textContent = `${hrs}:${mins}:${secs}`;
+
+            animationFrameId = requestAnimationFrame(updateClock);
+        }
+
+        function setSpeed(speed) {
+            speedMultiplier = speed;
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        // Start animation
+        updateClock();
+
+        // Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
