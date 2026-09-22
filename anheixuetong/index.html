@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="暗黑血统攻略 - 详尽的暗黑血统游戏全流程通关指南、技能加点推荐、BOSS弱点分析及隐藏要素收集攻略，助你轻松征服深渊。">
+    <meta name="keywords" content="暗黑血统攻略, 暗黑血统2, 暗黑血统, 游戏攻略, 虚幻引擎, 动作游戏">
+    <title>暗黑血统攻略 - 深渊征服者终极指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8a0b0b;
+            --secondary-color: #2a0505;
+            --accent-color: #d4af37;
+            --text-color: #e0e0e0;
+            --bg-dark: #0f0f0f;
+            --bg-card: #1a1a1a;
+            --border-color: #333;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-color);
+            line-height: 1.6;
+            background-image: radial-gradient(circle at center, #1f1f1f 0%, #000000 100%);
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 2rem;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(0, 0, 0, 0.9);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-shadow: 0 0 10px rgba(138, 11, 11, 0.5);
+        }
+
+        .logo span {
+            color: #fff;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-color);
+            font-weight: 500;
+        }
+
+        nav a.active {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://picsum.photos/seed/darkblood/1600/900.jpg') no-repeat center center/cover;
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.8);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            color: #ccc;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--primary-color);
+            color: #fff;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--primary-color);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid #fff;
+            margin-left: 1rem;
+        }
+
+        .btn-outline:hover {
+            background-color: #fff;
+            color: #000;
+        }
+
+        /* Content Cards */
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            border-color: var(--primary-color);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            filter: grayscale(30%);
+            transition: filter 0.3s ease;
+        }
+
+        .card:hover .card-img {
+            filter: grayscale(0%);
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .card-meta {
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card-text {
+            color: #bbb;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Guide List Style */
+        .guide-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .guide-item {
+            background-color: var(--bg-card);
+            padding: 1.5rem;
+            border-left: 3px solid var(--primary-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .guide-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .guide-item p {
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .guide-tag {
+            font-size: 0.75rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            background-color: #333;
+            color: #aaa;
+        }
+
+        .guide-tag.new {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            background-color: var(--bg-card);
+            margin-bottom: 1rem;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            background-color: #222;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            color: #aaa;
+            display: none;
+            border-top: 1px solid #333;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--accent-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #050505;
+            padding: 3rem 0;
+            margin-top: 4rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: #666;
+        }
+
+        .footer-links {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            margin: 0 1rem;
+            color: #888;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .header-inner {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <div class="logo">暗黑<span>血统</span>攻略</div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#guide">核心攻略</a></li>
+                    <li><a href="#skills">技能加点</a></li>
+                    <li><a href="#boss">BOSS战</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>深渊征服者指南</h1>
+                <p>深入探索由Vlambeer与Snowblind Studios合作打造的暗黑奇幻世界。本站提供最详尽的《暗黑血统2》与原作全流程攻略、恶魔技能解析及隐藏要素收集。</p>
+                <div>
+                    <a href="#guide" class="btn">开始阅读</a>
+                    <a href="#boss" class="btn btn-outline">BOSS图鉴</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Core Guide Section -->
+            <section id="guide">
+                <h2 class="section-title">核心流程攻略</h2>
+                <div class="grid-2">
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/dh2/600/400.jpg" alt="新手入门" class="card-img">
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span>新手必读</span>
+                                <span>2023-10-24</span>
+                            </div>
+                            <h3 class="card-title">新手入门：三杰系统详解</h3>
+                            <p class="card-text">深入解析游戏中的三大核心机制：暴怒、正义与欺诈。如何合理切换三杰技能以应对不同战斗环境？本篇攻略将教你如何最大化利用这三大恶魔之力。</p>
+                            <a href="#">阅读全文 &rarr;</a>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/dh2/600/400.jpg" alt="武器升级" class="card-img">
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span>装备系统</span>
+                                <span>2023-10-23</span>
+                            </div>
+                            <h3 class="card-title">武器升级与符文镶嵌指南</h3>
+                            <p class="card-text">武器是你在深渊中最重要的伙伴。了解如何通过收集符文来强化武器属性，解锁特殊攻击模式，以及哪些符文组合能带来最高的DPS输出。</p>
+                            <a href="#">阅读全文 &rarr;</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills" style="margin-top: 4rem;">
+                <h2 class="section-title">技能加点推荐</h2>
+                <div class="grid-3">
+                    <article class="card">
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span>暴怒系</span>
+                                <span>近战爆发</span>
+                            </div>
+                            <h3 class="card-title">狂战士流派</h3>
+                            <p class="card-text">专注于高伤害的单体打击。推荐优先点满“撕裂”和“复仇之魂”，适合快速清理小怪和对抗高血量BOSS的爆发阶段。</p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span>正义系</span>
+                                <span>控制与防御</span>
+                            </div>
+                            <h3 class="card-title">审判官流派</h3>
+                            <p class="card-text">提供强大的护盾和击退效果。核心技能“神圣之剑”和“驱逐”是走位的关键，适合喜欢硬核战斗和规避伤害的玩家。</p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span>欺诈系</span>
+                                <span>远程与爆发</span>
+                            </div>
+                            <h3 class="card-title">幻术师流派</h3>
+                            <p class="card-text">利用幻影分身进行输出和诱敌。重点提升“灵魂收割”和“时空扭曲”，在保持安全距离的同时造成巨额伤害。</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Boss Section -->
+            <section id="boss" style="margin-top: 4rem;">
+                <h2 class="section-title">BOSS弱点分析</h2>
+                <div class="guide-list">
+                    <div class="guide-item">
+                        <div>
+                            <h3>深渊领主 - 塞拉斯</h3>
+                            <p>位于第三章节。当它进入狂暴状态时，所有防御失效。建议在第一阶段积攒大量暴怒值，第二阶段切换正义系技能进行硬抗输出。</p>
+                        </div>
+                        <span class="guide-tag">高难度</span>
+                    </div>
+                    <div class="guide-item">
+                        <div>
+                            <h3>机械守卫</h3>
+                            <p>利用其机械弱点机制。当它举起手臂准备攻击时，使用欺诈系的远程技能打断，或者使用正义系的击退技能将其推下平台。</p>
+                        </div>
+                        <span class="guide-tag">技巧型</span>
+                    </div>
+                    <div class="guide-item">
+                        <div>
+                            <h3>阿巴顿</h3>
+                            <p>最终BOSS战。注意观察场地中的红光预警，及时切换三杰技能躲避范围攻击。保留“神圣之剑”用于反击阶段。</p>
+                        </div>
+                        <span class="guide-tag new">最终BOSS</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section id="faq" style="margin-top: 4rem;">
+                <h2 class="section-title">常见问题解答</h2>
+                <div class="grid-2">
+                    <div class="faq-item">
+                        <div class="faq-question">Q: 游戏存档损坏怎么办？</div>
+                        <div class="faq-answer">A: 请确保不要在游戏运行时直接关闭电源。如果存档损坏，尝试删除游戏目录下的`Save`文件夹，重新开始游戏通常可以解决问题。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Q: 如何解锁全成就？</div>
+                        <div class="faq-answer">A: 大部分成就需要在新游戏+模式中才能获得，尤其是收集类成就。建议通关一次后开启新游戏+进行全收集。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Q: 支持哪些操作手柄？</div>
+                        <div class="faq-answer">A: 本作对Xbox手柄支持最为完善，支持PS3/PS4手柄的模拟映射，但部分特殊按键（如三杰切换）在键盘上操作更为精准。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Q: 游戏画面模糊如何解决？</div>
+                        <div class="faq-answer">A: 请在图形设置中开启“垂直同步”，并调整分辨率至显示器原生分辨率。如果仍模糊，请检查显卡驱动是否为最新版本。</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">关于本站</a>
+                <a href="#">联系方式</a>
+                <a href="#">免责声明</a>
+                <a href="#">地图索引</a>
+            </div>
+            <p>&copy; 2023 暗黑血统攻略网. All rights reserved. 本站内容仅供学习交流使用，游戏版权归Snowblind Studios所有。</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Accordion Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close others
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current
+                    item.classList.toggle('active');
+                });
+            });
+
+            // Smooth Scroll for Navigation
+            document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
